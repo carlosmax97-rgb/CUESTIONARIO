@@ -95,7 +95,7 @@ function verificarInputs() {
 console.log("paginacion ejecutada");
 // 🔹 CONFIGURACIÓN
 const paginas = [
-  "", // raíz
+  "/", // raíz
   "/2da_parte/",
   "/3ra_parte/",
 ];
