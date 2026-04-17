@@ -96,8 +96,8 @@ console.log("paginacion ejecutada");
 // 🔹 CONFIGURACIÓN
 const paginas = [
   "", // raíz
-  "2da_parte/",
-  "3ra_parte/",
+  "/2da_parte/",
+  "/3ra_parte/",
 ];
 
 const nav = document.querySelector(".paginacion");
