@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "en": "What's the catch?",
+    "es": "¿Cuál es el truco?",
+    "audio": "audio/whats_the_catch.mp3"
+  },
+  {
+    "id": 2,
+    "en": "Same old, same old",
+    "es": "Lo mismo de siempre",
+    "audio": "audio/same_old.mp3"
+  },
+  {
+    "id": 3,
+    "en": "Beats me",
+    "es": "Ni idea",
+    "audio": "audio/beat_me.mp3"
+  },
+  {
+    "id": 4,
+    "en": "You can say that again",
+    "es": "Tienes toda la razón",
+    "audio": "audio/you_can_say_that_again.mp3"
+  },
+  {
+    "id": 5,
+    "en": "Just say the word",
+    "es": "Solo dilo",
+    "audio": "audio/just_say_the_word.mp3"
+  },
+  {
+    "id": 6,
+    "en": "I don't buy it",
+    "es": "No me lo creo",
+    "audio": "audio/i_dont_buy_it.mp3"
+  },
+  {
+    "id": 7,
+    "en": "No doubt about it",
+    "es": "Sin lugar a dudas",
+    "audio": "audio/no_doubt_about_it.mp3"
+  },
+  {
+    "id": 8,
+    "en": "Call it a day",
+    "es": "Dar algo por terminado",
+    "audio": "audio/call_it_a_day.mp3"
+  },
+  {
+    "id": 9,
+    "en": "Don't mention it",
+    "es": "Ni lo menciones",
+    "audio": "audio/dont_mention_it.mp3"
+  },
+  {
+    "id": 10,
+    "en": "Easy does it",
+    "es": "Con calma",
+    "audio": "audio/easy_does_it.mp3"
+  },
+  {
+    "id": 11,
+    "en": "It's on me",
+    "es": "Yo invito",
+    "audio": "audio/its_on_me.mp3"
+  },
+  {
+    "id": 12,
+    "en": "That's for sure",
+    "es": "Eso es seguro",
+    "audio": "audio/thats_for_sure.mp3"
+  },
+  {
+    "id": 13,
+    "en": "How wonderful!!",
+    "es": "¡Qué maravilloso!",
+    "audio": "audio/how_wonderfull.mp3"
+  },
+  {
+    "id": 14,
+    "en": "Be seeing you",
+    "es": "Nos estamos viendo",
+    "audio": "audio/be_seeing_you.mp3"
+  },
+  {
+    "id": 15,
+    "en": "Tell me about it",
+    "es": "Dímelo a mí",
+    "audio": "audio/tell_me_about_it.mp3"
+  }
+]
