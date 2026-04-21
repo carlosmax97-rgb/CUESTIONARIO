@@ -1,27 +1,134 @@
-// PARA LOS ACORDEONES
-const items = document.querySelectorAll(".faq-item");
+//1. Carga inicial
+document.addEventListener("DOMContentLoaded", () => {
+  cargarAcordeon("1ra_parte.json");
+  activarModal();
+});
+
+// 🔵 MODAL (CORREGIDO)
+function activarModal() {
+  const modal = document.getElementById("modal");
+
+  if (modal) {
+    modal.addEventListener("click", e => {
+      if (e.target === modal) {
+        cerrarModal();
+      }
+    });
+  }
+}
+
+//2. Generar acordeón desde JSON
+let datosGlobales = []; // 🔥 importante
+
+function cargarAcordeon(archivo) {
+  fetch("data/1ra_parte.json") //fetch(`../data/${archivo}`)//
+    .then(res => res.json())
+    .then(data => {
+
+      datosGlobales = data; // 🔥 guardamos el JSON
+
+      const contenedor = document.getElementById("faq-container");
+      contenedor.innerHTML = "";
+
+      data.forEach(item => {
+        const bloque = document.createElement("div");
+        bloque.className = "faq-item";
+
+        bloque.innerHTML = `
+          <div class="faq-header">
+            <button class="audio-btn-circle" data-audio="audio${item.id}">
+              🔊
+            </button>
+
+            <button class="faq-question" aria-expanded="false">
+              ${item.en}
+              <span class="icon">+</span>
+            </button>
+
+            <audio id="audio${item.id}" src="${item.audio}"></audio>
+          </div>
+
+          <div class="faq-answer">
+            <input type="text" placeholder="Translate">
+          </div>
+        `;
+
+        contenedor.appendChild(bloque);
+      });
+
+      activarAcordeon();
+      activarInputs();
+      activarAudio();
+    });
+}
+
+//3. Acordeón
+function activarAcordeon() {
+  const items = document.querySelectorAll(".faq-item");
 
   items.forEach(item => {
     const button = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
 
     button.addEventListener("click", () => {
       const isOpen = item.classList.contains("active");
 
-      // cerrar todos (modo acordeón clásico)
+      // cerrar todos
       items.forEach(i => {
         i.classList.remove("active");
-        i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        i.querySelector(".faq-question")
+          .setAttribute("aria-expanded", "false");
+
+        const ans = i.querySelector(".faq-answer");
+        ans.style.maxHeight = null; // 🔥 cerrar suave
       });
 
-      // abrir el actual si estaba cerrado
+      // abrir el actual
       if (!isOpen) {
         item.classList.add("active");
         button.setAttribute("aria-expanded", "true");
+
+        answer.style.maxHeight = answer.scrollHeight + "px"; // 🔥 altura dinámica
       }
     });
   });
+}
 
-// POP-UP mostrar el popup solo la primera vez
+//4. Inputs (CORREGIDO)
+function activarInputs() {
+  const inputs = document.querySelectorAll(".faq-answer input");
+  const btnTraduccion = document.getElementById("verTraduccion");
+  const btnSiguiente = document.getElementById("btnSiguiente");
+
+  function verificar() {
+    let completos = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === "") {
+        completos = false;
+      }
+    });
+
+    if (btnTraduccion) btnTraduccion.disabled = !completos;
+    if (btnSiguiente) btnSiguiente.disabled = !completos;
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", verificar);
+  });
+}
+
+//5. Audio (seguro)
+function activarAudio() {
+  document.querySelectorAll(".audio-btn-circle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const audio = document.getElementById(btn.dataset.audio);
+      if (audio) audio.play();
+    });
+  });
+}
+
+// POP-UP (se mantiene igual)
 function cerrarPopup() {
   document.getElementById("popup").style.display = "none";
 }
@@ -33,119 +140,70 @@ window.onload = function() {
   }
 };
 
-// PARA LAS TRADUCCIONES
-document.addEventListener("DOMContentLoaded", () => {
-
-  /*Cerrar haciendo click fuera del pop up*/
+// MODAL abrir/cerrar
+function verTxt() {
   const modal = document.getElementById("modal");
+  const lista = document.getElementById("lista-traducciones");
 
-  if (modal) {
-    modal.addEventListener("click", function(e) {
-      if (e.target === modal) {
-        cerrarModal();
-      }
-    });
-  }
+  // limpiar lista antes de cargar
+  lista.innerHTML = "";
 
-  const inputs = document.querySelectorAll(".faq-answer input");
-  const btnTraduccion = document.getElementById("verTraduccion");
-  const btnSiguiente = document.getElementById("btnSiguiente");
-
-  function verificarInputs() {
-    let todosCompletos = true;
-
-    inputs.forEach(input => {
-      if (input.value.trim() === "") {
-        todosCompletos = false;
-      }
-    });
-
-    btnTraduccion.disabled = !todosCompletos;
-    btnSiguiente.disabled = !todosCompletos;
-  }
-
-  // 👇 AHORA SÍ funciona
-  inputs.forEach(input => {
-    input.addEventListener("input", verificarInputs);
+  datosGlobales.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.en} - ${item.es}`;
+    lista.appendChild(li);
   });
 
-});
-
-// TRADUCCIONES (correccion)
-
-function verTxt() {
-  document.getElementById("modal").classList.remove("oculto");
+  modal.classList.remove("oculto");
 }
 
 function cerrarModal() {
   document.getElementById("modal").classList.add("oculto");
 }
 
-// verificarInputs (corregido)
-function verificarInputs() {
-  console.log("input detectado");
-  const inputs = document.querySelectorAll("input");
-
-  inputs.forEach(input => {
-    input.addEventListener("input", verificarInputs);
-  });
-}
-
-//PAGINACION AUTOMATIZADA
+// PAGINACIÓN (solo protegí un posible error)
 console.log("paginacion ejecutada");
-// 🔹 CONFIGURACIÓN
-const paginas = [
-  "/", // raíz
-  "/2da_parte/",
-  "/3ra_parte/",
-];
+
+const paginas = ["/", "/2da_parte/", "/3ra_parte/"];
 
 const nav = document.querySelector(".paginacion");
-nav.innerHTML = "";
 
-let pathActual = window.location.pathname;
+if (nav) {
+  nav.innerHTML = "";
 
-// detectar si estás en subcarpeta
-const partes = pathActual.split("/").filter(Boolean);
-const enSubcarpeta = partes.length > 2;
+  let pathActual = window.location.pathname;
+  const partes = pathActual.split("/").filter(Boolean);
+  const enSubcarpeta = partes.length > 2;
 
-// detectar página actual
-let indiceActual = 0;
+  let indiceActual = 0;
 
-paginas.forEach((ruta, i) => {
-  if (ruta && pathActual.includes(ruta)) {
-    indiceActual = i;
-  }
-});
-
-// generar links
-paginas.forEach((ruta, i) => {
-  const link = document.createElement("a");
-
-  let href;
-
-  if (!enSubcarpeta) {
-    // 👉 estás en raíz
-    href = ruta || "./";
-  } else {
-    // 👉 estás en subcarpeta
-    if (i === 0) {
-      href = "../"; // volver a raíz
-    } else {
-      href = "../" + ruta;
+  paginas.forEach((ruta, i) => {
+    if (ruta && pathActual.includes(ruta)) {
+      indiceActual = i;
     }
-  }
+  });
 
-  link.href = href;
-  link.textContent = i + 1;
+  paginas.forEach((ruta, i) => {
+    const link = document.createElement("a");
 
-  if (i === indiceActual) {
-    link.classList.add("actual");
-  }
+    let href;
 
-  nav.appendChild(link);
-});
+    if (!enSubcarpeta) {
+      href = ruta || "./";
+    } else {
+      href = i === 0 ? "../" : "../" + ruta;
+    }
 
+    link.href = href;
+    link.textContent = i + 1;
+
+    if (i === indiceActual) {
+      link.classList.add("actual");
+    }
+
+    nav.appendChild(link);
+  });
+}
 
 
 
