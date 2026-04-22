@@ -1,5 +1,23 @@
+//Funcion obtenerArchivoActual
+function obtenerArchivoActual() {
+  const partes = window.location.pathname.split("/").filter(Boolean);
+
+  // Busca si estás dentro de una subcarpeta tipo "2da_parte"
+  const carpeta = partes.find(p => p.includes("_parte"));
+
+  // Si existe → usa ese nombre
+  if (carpeta) {
+    return `${carpeta}.json`;
+  }
+
+  // Si estás en la raíz → 1ra parte
+  return "1ra_parte.json";
+}
+
 //1. Carga inicial
 document.addEventListener("DOMContentLoaded", () => {
+  const archivo = obtenerArchivoActual();
+  cargarAcordeon(archivo);
   detectarYcargarJSON();
   activarModal();
 });
