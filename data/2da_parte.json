@@ -1,0 +1,100 @@
+{
+  "faq": [
+    {
+      "id": 1,
+      "en": "You got this",
+      "audio": "audio/you_got_this.mp3",
+      "es": "Lo tienes"
+    },
+    {
+      "id": 2,
+      "en": "God only knows!",
+      "audio": "audio/god_only_knows.mp3",
+      "es": "¡Solo Dios sabe!"
+    },
+    {
+      "id": 3,
+      "en": "I'm alright",
+      "audio": "audio/im_alright.mp3",
+      "es": "Estoy bien"
+    },
+    {
+      "id": 4,
+      "en": "What's going on?",
+      "audio": "audio/whats_going_on.mp3",
+      "es": "¿Qué está pasando?"
+    },
+    {
+      "id": 5,
+      "en": "I have no clue",
+      "audio": "audio/i_have_no_clue.mp3",
+      "es": "No tengo ni idea"
+    },
+    {
+      "id": 6,
+      "en": "Pleased to meet you",
+      "audio": "audio/pleased_to_meet_you.mp3",
+      "es": "Encantado de conocerte"
+    },
+    {
+      "id": 7,
+      "en": "My apologies",
+      "audio": "audio/my_apologies.mp3",
+      "es": "Mis disculpas"
+    },
+    {
+      "id": 8,
+      "en": "It makes no sense",
+      "audio": "audio/it_makes_no_sense.mp3",
+      "es": "No tiene sentido"
+    },
+    {
+      "id": 9,
+      "en": "Go with the flow",
+      "audio": "audio/go_with_the_flow.mp3",
+      "es": "Dejarse llevar"
+    },
+    {
+      "id": 10,
+      "en": "I can't help you there",
+      "audio": "audio/icant_help_you_there.mp3",
+      "es": "No puedo ayudarte en eso"
+    },
+    {
+      "id": 11,
+      "en": "No harm done",
+      "audio": "audio/no_harm_done.mp3",
+      "es": "No pasó nada"
+    },
+    {
+      "id": 12,
+      "en": "There you go!",
+      "audio": "audio/there_you_go.mp3",
+      "es": "¡Ahí tienes!"
+    },
+    {
+      "id": 13,
+      "en": "I can't afford it",
+      "audio": "audio/icant_afford_it.mp3",
+      "es": "No puedo pagarlo"
+    },
+    {
+      "id": 14,
+      "en": "What are you waiting for?",
+      "audio": "audio/what_are_you_waiting_for.mp3",
+      "es": "¿Qué estás esperando?"
+    },
+    {
+      "id": 15,
+      "en": "Be seeing you",
+      "audio": "audio/be_seeing_you.mp3",
+      "es": "Nos estamos viendo"
+    },
+    {
+      "id": 16,
+      "en": "Best of luck",
+      "audio": "audio/best_of_luck.mp3",
+      "es": "La mejor de las suertes"
+    }
+  ]
+}
