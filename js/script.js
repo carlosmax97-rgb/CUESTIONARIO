@@ -40,9 +40,14 @@ function activarModal() {
 let datosGlobales = []; // ✅ CORREGIDO
 
 function cargarAcordeon(archivo) {
-  const base = obtenerRutaData();
+  // Detecta si estás en subcarpeta o raíz
+  const niveles = window.location.pathname.split("/").filter(Boolean);
+  const basePath = niveles.length > 3 ? "../data/" : "data/";
 
-  fetch(`${base}${archivo}`)
+  // Construye la URL correctamente
+  const url = new URL(basePath + archivo, window.location.href);
+
+  fetch(url)
     .then(res => {
       if (!res.ok) {
         throw new Error("No se encontró el JSON");
