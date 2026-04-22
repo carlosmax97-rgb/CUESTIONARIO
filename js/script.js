@@ -40,7 +40,7 @@ function activarModal() {
 let datosGlobales = []; // ✅ CORREGIDO
 
 //function cargarAcordeon(archivo)
-function cargarAcordeon("1ra_parte.json") {
+function cargarAcordeon(archivo) {
   // Detecta si estás en subcarpeta o raíz
   const niveles = window.location.pathname.split("/").filter(Boolean);
   const basePath = niveles.length > 3 ? "../data/" : "data/";
