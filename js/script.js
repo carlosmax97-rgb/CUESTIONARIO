@@ -18,7 +18,6 @@ function obtenerArchivoActual() {
 document.addEventListener("DOMContentLoaded", () => {
   const archivo = obtenerArchivoActual();
   cargarAcordeon(archivo);
-  detectarYcargarJSON();
   activarModal();
 });
 
@@ -210,34 +209,45 @@ function cerrarModal() {
   document.getElementById("modal").classList.add("oculto");
 }
 
-// PAGINACIÓN
+
+// PAGINACIÓN (FIX TOTAL)
 console.log("paginacion ejecutada");
 
-const paginas = ["/", "/2da_parte/", "/3ra_parte/"];
+// Detecta el base path del repo automáticamente
+function obtenerBasePath() {
+  const path = window.location.pathname;
+  const partes = path.split("/").filter(Boolean);
+
+  // Si estás en GitHub Pages tipo /repo/...
+  if (partes.length > 0) {
+    return "/" + partes[0] + "/";
+  }
+
+  return "/";
+}
+
+const base = obtenerBasePath();
+
+const paginas = [
+  `${base}`,
+  `${base}2da_parte/`,
+  `${base}3ra_parte/`
+];
+
 const nav = document.querySelector(".paginacion");
 
 if (nav) {
   nav.innerHTML = "";
 
-  let pathActual = window.location.pathname;
-  let indiceActual = 0;
+  const pathActual = window.location.pathname;
 
-  paginas.forEach((ruta, i) => {
-    if (ruta && pathActual.includes(ruta)) {
-      indiceActual = i;
-    }
-  });
+  let indiceActual = paginas.findIndex(p => pathActual === p || pathActual.includes(p));
+  if (indiceActual === -1) indiceActual = 0;
 
   paginas.forEach((ruta, i) => {
     const link = document.createElement("a");
 
-    let href = i === 0 ? "/" : ruta;
-
-    if (pathActual.includes("2da_parte") || pathActual.includes("3ra_parte")) {
-      href = i === 0 ? "../" : `../${ruta}`;
-    }
-
-    link.href = href;
+    link.href = ruta;
     link.textContent = i + 1;
 
     if (i === indiceActual) {
@@ -247,7 +257,6 @@ if (nav) {
     nav.appendChild(link);
   });
 }
-
 
 
 /*botones de paginacion - version VENTANA (+ de 5 paginas)*/
