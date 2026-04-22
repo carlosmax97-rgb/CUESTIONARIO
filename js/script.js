@@ -213,7 +213,7 @@ function cerrarModal() {
 // PAGINACIÓN
 console.log("paginacion ejecutada");
 
-const paginas = ["/", "../2da_parte/", "../3ra_parte/"];
+const paginas = ["/", "2da_parte/", "3ra_parte/"];
 const nav = document.querySelector(".paginacion");
 
 if (nav) {
