@@ -21,13 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   activarModal();
 });
 
-//Detectar qué JSON cargar (VERSIÓN PRO)
-function detectarYcargarJSON() {
-  const partes = window.location.pathname.split("/");
-  const carpeta = partes[1] || "1ra_parte";
-
-  cargarAcordeon(`${carpeta}.json`);
-}
 
 //Ruta dinámica
 function obtenerRutaData() {
@@ -58,11 +51,16 @@ let datosGlobales = []; // ✅ CORREGIDO
 
 //function cargarAcordeon(archivo)
 function cargarAcordeon(archivo) {
-  // Detecta si estás en subcarpeta o raíz
-  const niveles = window.location.pathname.split("/").filter(Boolean);
-  const basePath = niveles.length > 3 ? "../data/" : "data/";
+  // Detecta si estás en subcarpeta
+  const partes = window.location.pathname.split("/").filter(Boolean);
 
-  // Construye la URL correctamente
+  // Si estás dentro de "2da_parte", "3ra_parte", etc.
+  const enSubcarpeta = partes.some(p => p.includes("_parte"));
+
+  // Define ruta correcta
+  const basePath = enSubcarpeta ? "../data/" : "data/";
+
+  // URL final
   const url = new URL(basePath + archivo, window.location.href);
 
   fetch(url)
