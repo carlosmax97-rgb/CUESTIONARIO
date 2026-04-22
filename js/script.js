@@ -1,10 +1,29 @@
 //1. Carga inicial
 document.addEventListener("DOMContentLoaded", () => {
-  cargarAcordeon("1ra_parte.json");
+  detectarYcargarJSON();
   activarModal();
 });
 
-// 🔵 MODAL (CORREGIDO)
+//Detectar qué JSON cargar (VERSIÓN PRO)
+function detectarYcargarJSON() {
+  const partes = window.location.pathname.split("/");
+  const carpeta = partes[1] || "1ra_parte";
+
+  cargarAcordeon(`${carpeta}.json`);
+}
+
+//Ruta dinámica
+function obtenerRutaData() {
+  const ruta = window.location.pathname;
+
+  if (ruta.split("/").length > 2) {
+    return "../data/";
+  }
+
+  return "data/";
+}
+
+// 🔵 MODAL
 function activarModal() {
   const modal = document.getElementById("modal");
 
@@ -18,19 +37,27 @@ function activarModal() {
 }
 
 //2. Generar acordeón desde JSON
-let datosGlobales = []; // 🔥 importante
+let datosGlobales = []; // ✅ CORREGIDO
 
 function cargarAcordeon(archivo) {
-  fetch("data/1ra_parte.json") //fetch(`../data/${archivo}`)//
-    .then(res => res.json())
-    .then(data => {
+  const base = obtenerRutaData();
 
-      datosGlobales = data; // 🔥 guardamos el JSON
+  fetch(`${base}${archivo}`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("No se encontró el JSON");
+      }
+      return res.json();
+    })
+    .then(data => {
+      const lista = data.faq || data; // ✅ FLEXIBLE
+
+      datosGlobales = lista;
 
       const contenedor = document.getElementById("faq-container");
       contenedor.innerHTML = "";
 
-      data.forEach(item => {
+      lista.forEach(item => {
         const bloque = document.createElement("div");
         bloque.className = "faq-item";
 
@@ -59,6 +86,9 @@ function cargarAcordeon(archivo) {
       activarAcordeon();
       activarInputs();
       activarAudio();
+    })
+    .catch(err => {
+      console.error("Error cargando JSON:", err);
     });
 }
 
@@ -73,28 +103,24 @@ function activarAcordeon() {
     button.addEventListener("click", () => {
       const isOpen = item.classList.contains("active");
 
-      // cerrar todos
       items.forEach(i => {
         i.classList.remove("active");
         i.querySelector(".faq-question")
           .setAttribute("aria-expanded", "false");
 
-        const ans = i.querySelector(".faq-answer");
-        ans.style.maxHeight = null; // 🔥 cerrar suave
+        i.querySelector(".faq-answer").style.maxHeight = null;
       });
 
-      // abrir el actual
       if (!isOpen) {
         item.classList.add("active");
         button.setAttribute("aria-expanded", "true");
-
-        answer.style.maxHeight = answer.scrollHeight + "px"; // 🔥 altura dinámica
+        answer.style.maxHeight = answer.scrollHeight + "px";
       }
     });
   });
 }
 
-//4. Inputs (CORREGIDO)
+//4. Inputs
 function activarInputs() {
   const inputs = document.querySelectorAll(".faq-answer input");
   const btnTraduccion = document.getElementById("verTraduccion");
@@ -118,7 +144,7 @@ function activarInputs() {
   });
 }
 
-//5. Audio (seguro)
+//5. Audio
 function activarAudio() {
   document.querySelectorAll(".audio-btn-circle").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -128,29 +154,28 @@ function activarAudio() {
   });
 }
 
-// POP-UP (se mantiene igual)
+// POP-UP
 function cerrarPopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-window.onload = function() {
+window.onload = function () {
   if (!localStorage.getItem("popupMostrado")) {
     document.getElementById("popup").style.display = "flex";
     localStorage.setItem("popupMostrado", "true");
   }
 };
 
-// MODAL abrir/cerrar
+// MODAL
 function verTxt() {
   const modal = document.getElementById("modal");
   const lista = document.getElementById("lista-traducciones");
 
-  // limpiar lista antes de cargar
   lista.innerHTML = "";
 
   datosGlobales.forEach(item => {
     const li = document.createElement("li");
-    li.textContent = `${item.en} - ${item.es}`;
+    li.textContent = `${item.en} - ${item.es}`; // ✅ CORREGIDO
     lista.appendChild(li);
   });
 
@@ -161,20 +186,16 @@ function cerrarModal() {
   document.getElementById("modal").classList.add("oculto");
 }
 
-// PAGINACIÓN (solo protegí un posible error)
+// PAGINACIÓN
 console.log("paginacion ejecutada");
 
 const paginas = ["/", "/2da_parte/", "/3ra_parte/"];
-
 const nav = document.querySelector(".paginacion");
 
 if (nav) {
   nav.innerHTML = "";
 
   let pathActual = window.location.pathname;
-  const partes = pathActual.split("/").filter(Boolean);
-  const enSubcarpeta = partes.length > 2;
-
   let indiceActual = 0;
 
   paginas.forEach((ruta, i) => {
@@ -186,12 +207,10 @@ if (nav) {
   paginas.forEach((ruta, i) => {
     const link = document.createElement("a");
 
-    let href;
+    let href = i === 0 ? "/" : ruta;
 
-    if (!enSubcarpeta) {
-      href = ruta || "./";
-    } else {
-      href = i === 0 ? "../" : "../" + ruta;
+    if (pathActual.includes("2da_parte") || pathActual.includes("3ra_parte")) {
+      href = i === 0 ? "../" : `../${ruta}`;
     }
 
     link.href = href;
