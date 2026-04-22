@@ -177,12 +177,15 @@ function activarAudio() {
 
 // POP-UP
 function cerrarPopup() {
-  document.getElementById("popup").style.display = "none";
+  const popup = document.getElementById("popup");
+  if (popup) popup.style.display = "none";
 }
 
 window.onload = function () {
+  const popup = document.getElementById("popup");
+  if (!popup) return;
   if (!localStorage.getItem("popupMostrado")) {
-    document.getElementById("popup").style.display = "flex";
+    popup.style.display = "flex";
     localStorage.setItem("popupMostrado", "true");
   }
 };
@@ -239,7 +242,17 @@ if (nav) {
 
   const pathActual = window.location.pathname;
 
-  let indiceActual = paginas.findIndex(p => pathActual === p || pathActual.includes(p));
+  // Coincidencia más larga primero: "/repo/" matchea antes que "/repo/2da_parte/" si usamos findIndex solo.
+  let indiceActual = -1;
+  let mejorLen = -1;
+  paginas.forEach((p, i) => {
+    if (pathActual === p || pathActual.includes(p)) {
+      if (p.length > mejorLen) {
+        mejorLen = p.length;
+        indiceActual = i;
+      }
+    }
+  });
   if (indiceActual === -1) indiceActual = 0;
 
   paginas.forEach((ruta, i) => {
