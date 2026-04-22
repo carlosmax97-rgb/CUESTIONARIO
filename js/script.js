@@ -39,7 +39,8 @@ function activarModal() {
 //2. Generar acordeón desde JSON
 let datosGlobales = []; // ✅ CORREGIDO
 
-function cargarAcordeon(archivo) {
+//function cargarAcordeon(archivo)
+function cargarAcordeon("1ra_parte.json") {
   // Detecta si estás en subcarpeta o raíz
   const niveles = window.location.pathname.split("/").filter(Boolean);
   const basePath = niveles.length > 3 ? "../data/" : "data/";
