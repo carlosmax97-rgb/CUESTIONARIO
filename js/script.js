@@ -226,12 +226,12 @@ function obtenerBasePath() {
   return "/";
 }
 
-const base = obtenerBasePath();
+const basePathRepo = obtenerBasePath();
 
 const paginas = [
-  `${base}`,
-  `${base}2da_parte/`,
-  `${base}3ra_parte/`
+  `${basePathRepo}`,
+  `${basePathRepo}2da_parte/`,
+  `${basePathRepo}3ra_parte/`
 ];
 
 const nav = document.querySelector(".paginacion");
