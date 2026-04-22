@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "en": "Rings a bell",
+    "es": "me suena",
+    "audio": "audio/rings_a_bell.mp3"
+  },
+  {
+    "id": 2,
+    "en": "Point taken",
+    "es": "te entiendo",
+    "audio": "audio/point_taken.mp3"
+  },
+  {
+    "id": 3,
+    "en": "Just in case",
+    "es": "por si acaso",
+    "audio": "audio/just_in_case.mp3"
+  },
+  {
+    "id": 4,
+    "en": "Keep it up",
+    "es": "sigue así",
+    "audio": "audio/keep_it_up.mp3"
+  },
+  {
+    "id": 5,
+    "en": "This is not rocket science",
+    "es": "no es tan dificil",
+    "audio": "audio/this_is_not_rocket_science.mp3"
+  },
+  {
+    "id": 6,
+    "en": "Like father, like son",
+    "es": "de tal palo tal astilla",
+    "audio": "audio/like_father_like_son.mp3"
+  },
+  {
+    "id": 7,
+    "en": "Long story short",
+    "es": "resumiendo",
+    "audio": "audio/long_story_short.mp3"
+  },
+  {
+    "id": 8,
+    "en": "It's not a big deal",
+    "es": "no es para tanto",
+    "audio": "audio/its_not_a_big_deal.mp3"
+  },
+  {
+    "id": 9,
+    "en": "Out of the blue",
+    "es": "como caído del cielo",
+    "audio": "audio/out_of_the_blue.mp3"
+  },
+  {
+    "id": 10,
+    "en": "No wonder",
+    "es": "no me extraña",
+    "audio": "audio/no_wonder.mp3"
+  },
+  {
+    "id": 11,
+    "en": "Look for",
+    "es": "buscar",
+    "audio": "audio/look_for.mp3"
+  },
+  {
+    "id": 12,
+    "en": "Go on",
+    "es": "continuar",
+    "audio": "audio/go_on.mp3"
+  },
+  {
+    "id": 13,
+    "en": "Slow down",
+    "es": "ir más despacio",
+    "audio": "audio/slow_down.mp3"
+  },
+  {
+    "id": 14,
+    "en": "Get away",
+    "es": "alejarse",
+    "audio": "audio/get_away.mp3"
+  },
+  {
+    "id": 15,
+    "en": "Come back",
+    "es": "regresar",
+    "audio": "audio/come_back.mp3"
+  },
+  {
+    "id": 16,
+    "en": "So long",
+    "es": "hasta la vista",
+    "audio": "audio/so_long.mp3"
+  }
+]
