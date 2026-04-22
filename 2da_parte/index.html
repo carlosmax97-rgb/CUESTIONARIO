@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>index</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 <div id="popup" class="popup">
   <div class="popup-content">
     <p>
-      Una vez que completes todos los campos, se habilitará la opción de corroborar la traducción y pasar al siguiente cuestionario.
+      Una vez que completes todos los campos, se habilitará la opción de ver la traducción.
     </p>
     <button onclick="cerrarPopup()">Entendido</button>
   </div>
@@ -22,324 +23,17 @@
 
 <div class="faq">
   <h1>Phrases to translate</h1>
-  <p><em> &#8212; 2da parte &#8212; </em></p>
+  <p><em>Frases a traducir <br> &#8212; 2da parte &#8212;</em></p>
 
-<!--You got this-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio1').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        You got this
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio1" src="audio/you_got_this.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--God only knows!-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio2').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        God only knows!
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio2" src="audio/god_only_knows.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--I'm alright-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio3').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        I'm alright
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio3" src="audio/im_alright.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--What's going on?-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio4').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        What's going on?
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio4" src="audio/whats_going_on.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--I have no clue-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio5').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        I have no clue
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio5" src="audio/i_have_no_clue.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--Pleased to meet you-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio6').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        Pleased to meet you
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio6" src="audio/pleased_to_meet_you.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--My apologies-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio7').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        My apologies
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio7" src="audio/my_apologies.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--It makes no sense-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio8').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        It makes no sense
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio8" src="audio/it_makes_no_sense.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--Go with the flow-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio9').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        Go with the flow
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio9" src="audio/go_with_the_flow.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--I can't help you there-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio10').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        I can't help you there
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio10" src="audio/icant_help_you_there.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--No harm done-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio11').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        No harm done
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio11" src="audio/no_harm_done.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--There you go!-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio12').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        There you go!
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio12" src="audio/there_you_go.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--I can't afford it-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio13').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        I can't afford it
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio13" src="audio/icant_afford_it.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--What are you waiting for?-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio14').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        What are you waiting for?
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio14" src="audio/what_are_you_waiting_for.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--Be seeing you-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio15').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        Be seeing you
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio15" src="audio/be_seeing_you.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
-<!--Best of luck-->
-  <div class="faq-item">
-    <div class="faq-header">
-      <button class="audio-btn-circle"
-        onclick="document.getElementById('audio16').play()">
-        🔊
-      </button>
-      <button class="faq-question" aria-expanded="false">
-        Best of luck
-        <span class="icon">+</span>
-      </button>
-      <audio id="audio16" src="audio/best_of_luck.mp3"></audio>
-    </div>
-    <div class="faq-answer">
-      <input type="text" name="" placeholder="Translate">
-    </div>
-  </div>
-
+  <div id="faq-container"></div>
 </div>
 
 <!--TRADUCCIONES-->
 <div id="modal" class="modal oculto">
   <div class="modal-contenido">
     <span class="cerrar" onclick="cerrarModal()">x</span>
-
     <h2>Traducciones</h2>
-
-    <ul>
-      <li>You got this - lo tienes</li>
-      <li>God only knows! - Solo dios sabe!</li>
-      <li>I'm alright - Estoy bien</li>
-      <li>Best of luck - La mejor de las suertes</li>
-      <li>What's going on? Que esta pasando?</li>
-      <li>I have no clue - No tengo ni idea</li>
-      <li>Pleased to meet you - Encantado de conocerte</li>
-      <li>My apologies - Mis disculpas</li>
-      <li>It makes no sense - No tiene sentido</li>
-      <li>Go with the flow - Dejarse llevar</li>
-      <li>I can't help you there - No puedo ayudarte en eso</li>
-      <li>No harm done - No paso nada</li>
-      <li>There you go! - Ahí tienes!</li>
-      <li>I can't afford it - No puedo pagarlo</li>
-      <li>What are you waiting for? - Que estas esperando?</li>
-      <li>Be seeing you - Nos estamos viendo</li>
-      <li>Best of luck - La mejor de las suertes</li>
-    </ul>
+    <ul id="lista-traducciones"></ul>
   </div>
 </div>
 
@@ -350,6 +44,10 @@
 <nav class="paginacion"></nav>
 
 <!--js externo-->
+<script>
+  const base = "../data/";
+  const archivo = "2da_parte.json";
+</script>
 <script src="../js/script.js"></script>
 </body>
 </html>
