@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "en": "Safe and sound",
+    "es": "Sano y a salvo",
+    "audio": "audio/safe_and_sound.mp3"
+  },
+  {
+    "id": 2,
+    "en": "God willing",
+    "es": "Si Dios quiere",
+    "audio": "audio/god_willing.mp3"
+  },
+  {
+    "id": 3,
+    "en": "Wait and see",
+    "es": "Espera y verás",
+    "audio": "audio/wait_and_see.mp3"
+  },
+  {
+    "id": 4,
+    "en": "Here you are",
+    "es": "Aquí lo tienes",
+    "audio": "audio/here_you_are.mp3"
+  },
+  {
+    "id": 5,
+    "en": "That's sick",
+    "es": "Eso es increíble",
+    "audio": "audio/thats_sick.mp3"
+  },
+  {
+    "id": 6,
+    "en": "Stay out of it",
+    "es": "No te metas",
+    "audio": "audio/stay_out_of_it.mp3"
+  },
+  {
+    "id": 7,
+    "en": "Time is up",
+    "es": "Se acabó el tiempo",
+    "audio": "audio/time_is_up.mp3"
+  },
+  {
+    "id": 8,
+    "en": "I trust you",
+    "es": "Confío en ti",
+    "audio": "audio/i_trust_you.mp3"
+  },
+  {
+    "id": 9,
+    "en": "My bad",
+    "es": "Mi culpa",
+    "audio": "audio/my_bad.mp3"
+  },
+  {
+    "id": 10,
+    "en": "As soon as possible",
+    "es": "Tan pronto como sea posible",
+    "audio": "audio/as_soon_as_possible.mp3"
+  },
+  {
+    "id": 11,
+    "en": "Don't mention it",
+    "es": "Ni lo menciones",
+    "audio": "audio/dont_mention_it.mp3"
+  },
+  {
+    "id": 12,
+    "en": "That's enough",
+    "es": "Es suficiente",
+    "audio": "audio/thats_enough.mp3"
+  },
+  {
+    "id": 13,
+    "en": "It's on me",
+    "es": "Yo invito",
+    "audio": "audio/its_on_me.mp3"
+  },
+  {
+    "id": 14,
+    "en": "I mean it",
+    "es": "Lo digo en serio",
+    "audio": "audio/i_mean_it.mp3"
+  }
+]
