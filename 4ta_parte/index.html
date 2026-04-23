@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>index</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!--POP-UP
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <p>
+      Una vez que completes todos los campos, se habilitará la opción de ver la traducción.
+    </p>
+    <button onclick="cerrarPopup()">Entendido</button>
+  </div>
+</div>
+-->
+
+<div class="faq">
+  <h1>Phrases to translate</h1>
+  <p><em>Frases a traducir <br> &#8212; 4ta parte &#8212;</em></p>
+
+  <div id="faq-container"></div>
+</div>
+
+<!--TRADUCCIONES-->
+<div id="modal" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">x</span>
+    <h2>Traducciones</h2>
+    <ul id="lista-traducciones"></ul>
+  </div>
+</div>
+
+<!--boton traduccion-->
+<button id="verTraduccion" class="btn-verTraduccion" onclick="verTxt()" disabled>Ver traducción</button>
+
+<!--boton paginacion (usando js nivel pro)-->
+<nav class="paginacion"></nav>
+
+<!--js externo-->
+<script src="../js/script.js"></script>
+</body>
+</html>

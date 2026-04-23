@@ -1,14 +1,14 @@
-Safe and sound - Sano y a salvo
-God willing - Si dios quiere
-Wait and see - Espera y verás
-Here you are - Aquí lo tienes
-That's sick - Eso es increible
-Stay out of it - No te metas
-Time is up - Se acabó el tiempo
-I trust you - Confio en ti
-My bad - Mi culpa
-As soon as possible - Tan pronto como sea posible
-Don't mention it - Ni lo menciones
-That's enought - Es suficiente
-It's on me - Yo invito
-I mean it - Lo digo en serio
+1.Safe and sound - Sano y a salvo "audio/safe_and_sound.mp3"
+2.God willing - Si dios quiere "audio/god_willing.mp3"
+3.Wait and see - Espera y verás "audio/wait_and_see.mp3"
+4.Here you are - Aquí lo tienes "audio/here_you_are.mp3"
+5.That's sick - Eso es increible "audio/thats_sick.mp3"
+6.Stay out of it - No te metas "audio/stay_out_of_it.mp3"
+7.Time is up - Se acabó el tiempo "audio/time_is_up.mp3"
+8.I trust you - Confio en ti "audio/i_trust_you.mp3"
+9.My bad - Mi culpa "audio/my_bad.mp3"
+10.As soon as possible - Tan pronto como sea posible "audio/as_soon_as_possible.mp3"
+11.Don't mention it - Ni lo menciones "audio/dont_mention_it.mp3"
+12.That's enough - Es suficiente "audio/thats_enough.mp3"
+13.It's on me - Yo invito "audio/its_on_me.mp3"
+14.I mean it - Lo digo en serio "audio/i_mean_it.mp3"
