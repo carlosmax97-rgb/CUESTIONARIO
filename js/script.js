@@ -233,7 +233,8 @@ const paginas = [
   `${basePathRepo}`,
   `${basePathRepo}2da_parte/`,
   `${basePathRepo}3ra_parte/`,
-  `${basePathRepo}4ta_parte/`
+  `${basePathRepo}4ta_parte/`,
+  `${basePathRepo}5ta_parte/`
 ];
 
 const nav = document.querySelector(".paginacion");
