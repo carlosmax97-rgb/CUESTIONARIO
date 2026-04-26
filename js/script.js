@@ -211,7 +211,7 @@ function cerrarModal() {
 }
 
 
-// PAGINACIÓN (FIX TOTAL)
+// PAGINACIÓN (VERSIÓN VENTANA)
 console.log("paginacion ejecutada");
 
 // Detecta el base path del repo automáticamente
@@ -244,9 +244,10 @@ if (nav) {
 
   const pathActual = window.location.pathname;
 
-  // Coincidencia más larga primero: "/repo/" matchea antes que "/repo/2da_parte/" si usamos findIndex solo.
+  // Detectar página actual usando coincidencia más larga
   let indiceActual = -1;
   let mejorLen = -1;
+
   paginas.forEach((p, i) => {
     if (pathActual === p || pathActual.includes(p)) {
       if (p.length > mejorLen) {
@@ -255,12 +256,18 @@ if (nav) {
       }
     }
   });
+
   if (indiceActual === -1) indiceActual = 0;
 
-  paginas.forEach((ruta, i) => {
+  // Ventana: cantidad de botones a cada lado del actual
+  const rango = 2;
+  const inicio = Math.max(0, indiceActual - rango);
+  const fin = Math.min(paginas.length - 1, indiceActual + rango);
+
+  for (let i = inicio; i <= fin; i++) {
     const link = document.createElement("a");
 
-    link.href = ruta;
+    link.href = paginas[i];
     link.textContent = i + 1;
 
     if (i === indiceActual) {
@@ -268,60 +275,8 @@ if (nav) {
     }
 
     nav.appendChild(link);
-  });
+  }
 }
 
 
-/*botones de paginacion - version VENTANA (+ de 5 paginas)*/
-/*
-const paginas = [
-  "",
-  "2da_parte/",
-  "3ra_parte/",
-  "4ta_parte/",
-  "5ta_parte/",
-  "6ta_parte/"
-];
 
-const nav = document.querySelector(".paginacion");
-nav.innerHTML = "";
-
-// detectar actual
-let pathActual = window.location.pathname;
-
-let indiceActual = paginas.findIndex(ruta =>
-  pathActual.includes(ruta)
-);
-
-if (indiceActual === -1) indiceActual = 0;
-
-const rango = 2;
-
-// generar ventana
-for (
-  let i = indiceActual - rango;
-  i <= indiceActual + rango;
-  i++
-) {
-  if (i < 0 || i >= paginas.length) continue;
-
-  const link = document.createElement("a");
-
-  // rutas correctas
-  let href;
-  if (pathActual.includes("/2da_parte/") || pathActual.includes("/3ra_parte/")) {
-    href = i === 0 ? "../" : "../" + paginas[i];
-  } else {
-    href = paginas[i] || "./";
-  }
-
-  link.href = href;
-  link.textContent = i + 1;
-
-  if (i === indiceActual) {
-    link.classList.add("actual");
-  }
-
-  nav.appendChild(link);
-}
-*/
